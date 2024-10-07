@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: url(../../public/img/background2.webp) center/cover;
+    backdrop-filter: brightness(0.65) blur(4px);
+}
