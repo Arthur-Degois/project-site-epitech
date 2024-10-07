@@ -8,16 +8,16 @@ const Formulaire = () => {
             <h2>JOBZ</h2>
         </div>
         <div>
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" />
+          <label htmlFor="lastname">Lastname</label>
+          <input type="text" id="lastname" required />
         </div>
         <div>
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" />
+          <input type="text" id="name" required/>
         </div>
         <div>
           <label htmlFor="password">Password</label>
-          <input type="text" id="password" />
+          <input type="text" id="password" required/>
         </div>
         <input type="submit"  value="Se Connecter"/>
       </form>

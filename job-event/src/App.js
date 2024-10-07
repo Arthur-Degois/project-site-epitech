@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Admin from './pages/Admin';
 import Connexion from './pages/Connexion';
 import "./styles/app.css"
+import Inscription from './pages/Inscription';
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/connexion" element={<Connexion />} />
+        <Route path="/inscription" element={<Inscription />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Home />} />
       </Routes>
