@@ -1,9 +1,19 @@
 import React from "react";
 
 const Formulaire = () => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem("accesToken", "Arthur");
+    let location = window.location.href;
+    location = location.replace("connexion", "home");
+    window.location.href = location;
+    
+  }
+
   return (
     <div className="center">
-      <form action="" className="subscribe">
+      <form action="" className="subscribe" onSubmit={(e) => handleSubmit(e)}>
         <div>
             <h2>JOBZ</h2>
         </div>
@@ -17,9 +27,9 @@ const Formulaire = () => {
         </div>
         <div>
           <label htmlFor="password">Password</label>
-          <input type="text" id="password" required/>
+          <input type="password" id="password" required/>
         </div>
-        <input type="submit"  value="Se Connecter"/>
+        <input type="submit"  value="Se Connecter" />
       </form>
     </div>
   );

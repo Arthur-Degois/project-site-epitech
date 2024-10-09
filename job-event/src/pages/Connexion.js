@@ -3,10 +3,10 @@ import Navigation from '../Composants/Navigation';
 import Formulaire from '../Composants/Formulaire';
 import "../styles/connexion.css"
 
-const Connexion = () => {
+const Connexion = ({ accesToken }) => {
     return (
         <div>
-            <Navigation />
+            <Navigation accesToken={accesToken}/>
             <Formulaire />
         </div>
     );

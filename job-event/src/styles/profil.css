@@ -1,0 +1,17 @@
+.profil {
+    width: 100%;
+    h2 {
+        text-align: center;
+        padding: 20px;
+    }
+    .box {
+        padding: 20px;
+        margin: 20px auto;
+        width: 95%;
+        border: 1px solid lightgray;
+        background: rgba(255, 255, 255, 0.219);
+        h3 {
+            padding: 10px;
+        }
+    }
+}

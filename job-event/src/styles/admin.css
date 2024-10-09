@@ -1,0 +1,59 @@
+.admin {
+    width: 100vw;
+    text-align: center;
+    h1 {
+        margin: 0 auto;
+        padding: 50px;
+    }
+    .tool {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 50px;
+        border: 1px solid white;
+        background: rgba(255, 255, 255, 0.219);
+        width: 95%;
+        margin: 0 auto;
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            cursor: pointer;
+        }
+    }
+    .monitor {
+        min-height: 300px;
+        background: rgba(255, 255, 255, 0.219);
+        width: 95%;
+        margin: 20px auto;
+        border: 1px solid white;
+        .add {
+            h2 {
+                padding: 20px;
+            }
+            div {
+                max-width: 50%;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                label {
+                    margin-right: 10px;
+                }
+                input[type="text"] {
+                    max-width: 300px;
+                }
+            }
+            input[type="submit"] {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                color: black;
+                cursor: pointer;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

@@ -1,22 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navigation from '../Composants/Navigation';
 import "../styles/home.css";
-import { NavLink } from 'react-router-dom';
+import Accueuil from '../Composants/Accueil';
+import Tinder from '../Composants/Tinder';
 
-const Home = () => {
+const Home = ({ accesToken }) => {
+
     return (
         <div>
-            <Navigation />
-            <div className="main">
-                <div>
-                   <h1>
-                    Swipe Your Job
-                   </h1>
-                   <NavLink to="/inscription">
-                   <button>Create an Account</button>
-                   </NavLink>
-                </div>
-            </div>
+            <Navigation accesToken={accesToken}/>
+            {accesToken ?<Tinder /> : <Accueuil />
+            }
         </div>
     );
 };
