@@ -7,14 +7,22 @@ const Addprofil = () => {
     const [email, SetEmail] = useState("");
     const [password, SetPassword] = useState("");
 
+  //   const createData = () => {
+  //     axios.post("../", {
+  //         nom: "degois",
+  //         prenom: "",
+  //         tel: "",
+  //         naissance: ""
+  //     }).then((res) => res.json())
+  // }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3004/profil", {
+        axios.post("http://localhost:3000/inscription", {
           prenom: name,
           nom : lastname,
           email: email,
-          password: password,
-          id: 5
+          telephone: password,
         }).then((res) => {
           SetLastname("");
           SetName("");
