@@ -4,14 +4,11 @@ import React, { useEffect, useState } from 'react';
 const Modify = () => {
 
     const [array,SetArray] = useState([])
-    axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-
+    
     async function fetch() {
-        await axios.get({url:"http://localhost/phpmyadmin/index.php", withCredentials: false,}).then((res) => res.json()).then((data) => SetArray(data))
-        console.log(array);
-        console.log("ok");
-
-        
+        const res = await axios.get(`http://localhost:3000/people-id/1`)
+        console.log(res.data);
+        SetArray(res.data)  
     }
 
 

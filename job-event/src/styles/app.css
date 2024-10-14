@@ -9,7 +9,7 @@
 
 body {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: url(../../public/img/background2.webp) center/cover;
     backdrop-filter: brightness(0.65) blur(4px);
 }

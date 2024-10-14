@@ -1,0 +1,135 @@
+.container {
+    position: relative;
+    height: calc(100vh - 67px);
+    width: 100%;
+    .moveL {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 300px;
+        height: 500px;
+        border: 1px solid white;
+        background: rgba(255, 0, 0, 0.486);
+        animation: moveleft 1s ease-in-out;
+        .button {
+            display: flex;
+            flex-direction: row;
+            .btn-hearth {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                font-size: 3.5rem;
+                color: rgb(240, 60, 60);
+                cursor: pointer;
+            }
+            .btn-cross {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                font-size: 2rem;
+                color: rgb(240, 60, 60);
+                cursor: pointer;
+            }
+        }
+    }
+    .moveR {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 300px;
+        height: 500px;
+        border: 1px solid white;
+        background: rgba(255, 0, 0, 0.486);
+        animation: moveright 1s ease-in-out;
+        .button {
+            display: flex;
+            flex-direction: row;
+            .btn-hearth {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                font-size: 3.5rem;
+                color: rgb(240, 60, 60);
+                cursor: pointer;
+            }
+            .btn-cross {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                font-size: 2rem;
+                color: rgb(240, 60, 60);
+                cursor: pointer;
+            }
+        }
+    }
+    .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 300px;
+        height: 500px;
+        border: 1px solid white;
+        background: rgba(255, 0, 0, 0.486);
+        .button {
+            display: flex;
+            flex-direction: row;
+            .btn-hearth {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                font-size: 3.5rem;
+                color: rgb(240, 60, 60);
+                cursor: pointer;
+            }
+            .btn-cross {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                font-size: 2rem;
+                color: rgb(240, 60, 60);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@keyframes moveleft {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(-100%, -50%);
+        opacity: 0;
+}
+}
+
+@keyframes moveright {
+    0% {
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(0%, -50%);
+        opacity: 0;
+}
+}

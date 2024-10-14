@@ -9,7 +9,7 @@ const Accueuil = () => {
                     Swipe Your Job
                    </h1>
                    <NavLink to="/inscription">
-                   <button>Create an Account</button>
+                   <button className='subscribe-btn'>Create an Account</button>
                    </NavLink>
                 </div>
             </div>

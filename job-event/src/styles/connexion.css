@@ -24,7 +24,7 @@
             label {
                 margin: 5px;
             }
-            input[type="text"], input[type="password"] {
+            input[type="email"], input[type="password"] {
                 color: black;
                 padding: 5px;
                 width: 300px;
@@ -37,6 +37,10 @@
             border-radius: 10px;
             border: none;
             cursor: pointer;
+        }
+        p {
+            padding: 10px;
+            color: rgb(226, 25, 25);
         }
     }
 }

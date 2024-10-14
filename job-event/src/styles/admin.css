@@ -41,7 +41,7 @@
                 label {
                     margin-right: 10px;
                 }
-                input[type="text"] {
+                input[type="text"], input[type="phone"], input[type="password"], input[type="date"] {
                     max-width: 300px;
                     color: black;
                 }
