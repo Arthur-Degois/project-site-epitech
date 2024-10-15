@@ -164,12 +164,11 @@ app.get("/people", (req, res) => {
     });
 });
 
-
-app.get("/advertisements", (req, res) => {
+app.get("/advertisements",(req, res) => {
     const query = "SELECT * FROM advertisements";
  
-    db.query(query, [], (err, result) => {
-       
+     db.query(query, [], (err, result) => {
+
         if (err) {
             console.error("Erreur lors de la récupération des données :", err);
             res.status(500).send("Erreur serveur");
@@ -300,9 +299,10 @@ app.get ("/", (req, res) => {
     });
 
     app.delete("/people-suppression/:id", (req, res)=>{
-        const query = "DELETE FROM people WHERE ID = ?";
-
+        const query = "DELETE FROM people WHERE people_id = ?";
+        
         const userId = req.params.id;
+        console.log(userId);
         db.query (query,[userId], (err,result)=>{
             if(err){
                 console.error("Erreur lors de la récupération des données");

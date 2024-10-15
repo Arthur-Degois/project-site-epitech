@@ -56,5 +56,27 @@
                 margin-bottom: 20px;
             }
         }
+        .search {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            input {
+                width: 400px;
+                margin: 5px;
+            }
+        }
+        .showprofil {
+            padding: 20px;
+            .profilpeople {
+                display: flex;
+                justify-content: space-evenly;
+                padding: 15px 0;
+                .delete {
+                    color: black;
+                    padding: 5px;
+                    cursor: pointer;
+                }
+            }
+        }
     }
 }

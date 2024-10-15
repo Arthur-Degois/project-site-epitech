@@ -2,10 +2,17 @@
     position: relative;
     height: calc(100vh - 67px);
     width: 100%;
+    h3 {
+        padding: 20px;
+    }
+    p {
+        margin: 5px;
+    }
     .moveL {
         position: absolute;
         top: 50%;
         left: 50%;
+        transition: 0.5s;
         transform: translate(-50%,-50%);
         width: 300px;
         height: 500px;
@@ -13,6 +20,8 @@
         background: rgba(255, 0, 0, 0.486);
         animation: moveleft 1s ease-in-out;
         .button {
+            position: absolute;
+            bottom: 20px;
             display: flex;
             flex-direction: row;
             .btn-hearth {
@@ -43,6 +52,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        transition: 0.5s;
         transform: translate(-50%,-50%);
         width: 300px;
         height: 500px;
@@ -50,6 +60,8 @@
         background: rgba(255, 0, 0, 0.486);
         animation: moveright 1s ease-in-out;
         .button {
+            position: absolute;
+            bottom: 20px;
             display: flex;
             flex-direction: row;
             .btn-hearth {
@@ -80,12 +92,15 @@
         position: absolute;
         top: 50%;
         left: 50%;
+        transition: 0.5s;
         transform: translate(-50%,-50%);
         width: 300px;
         height: 500px;
         border: 1px solid white;
         background: rgba(255, 0, 0, 0.486);
         .button {
+            position: absolute;
+            bottom: 20px;
             display: flex;
             flex-direction: row;
             .btn-hearth {

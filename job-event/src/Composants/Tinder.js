@@ -1,30 +1,24 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/tinder.css";
+import Card from "./Card";
 
 const Tinder = () => {
 
-    const [arrayAdd, SetArrayAdd] = useState([])
+  const [arrayAdd, SetArrayAdd] = useState([]);
+  const [index,SetIndex] = useState(0);
 
-    useEffect(() => {
-        axios.get("http://localhost:3000/advertisements").then((res) => SetArrayAdd(res.data)
-        )
-       
-    })
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/advertisements")
+      .then((res) => SetArrayAdd(res.data));
+  }, []);
 
-    const [clickBL, SetClickBL] = useState(false);
-    const [clickBR, SetClickBR] = useState(false);
-
+  console.log(index);
 
   return (
     <div className="main container">
-      <div className={clickBL ? "moveL": clickBR ? "moveR": "card"}>
-        <div className="contenu">ce sera la</div>
-        <div className="button">
-          <button className="btn-cross" id="left" onClick={() => SetClickBL(true)}>&#10060;</button>
-          <button className="btn-hearth" id="right" onClick={() => SetClickBR(true)}>&#9829;</button>
-        </div>
-      </div>
+      {arrayAdd.length === 0 ? <p>pas de nouvelle annonce</p> : arrayAdd.length === index ? <p>pas de nouvelle annonce</p> : <Card data={arrayAdd[index]} setindex={SetIndex}  index={index} />}
     </div>
   );
 };
