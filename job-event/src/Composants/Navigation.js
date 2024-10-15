@@ -20,7 +20,6 @@ const Navigation = ({ accesToken}) => {
           <h2>Home</h2>
         </NavLink>
       </div>
-      <input type="text" placeholder="recherche" />
       {accesToken ? (
         <div className="log">
         <p onClick={(e) => logOut()}>log out</p>

@@ -7,7 +7,7 @@ const Deleteprofil = () => {
     const [peopleArray,SetPeopleArray] = useState([]);
 
 
-    const deleteprofil = () => {
+    const deleteprofil = (people) => {
         let confirmdelete = window.confirm("Voulez vous vraiment supprimer ce profil ?");
         if (confirmdelete) {
             axios.delete(`http://localhost:3000/people-suppression/${people.people_id}`)
@@ -18,7 +18,7 @@ const Deleteprofil = () => {
         axios
           .get("http://localhost:3000/people")
           .then((res) => SetPeopleArray(res.data));
-      }, []);
+      }, [deleteprofil]);
 
     return (
         <div>
@@ -27,7 +27,7 @@ const Deleteprofil = () => {
             <input type="text" placeholder='search by lastname' />
             </div>
             <div className="showprofil">
-                {peopleArray.map((people, index) => <Deletecardpeople key={index} people={people} />)}
+                {peopleArray.map((people, index) => <Deletecardpeople key={index} people={people} deleteprofil={deleteprofil}/>)}
             </div>
         </div>
     );

@@ -1,10 +1,11 @@
 #navigation {
-    height: 67px;
+    height: 80px;
     background: rgba(255, 255, 255, 0.205);
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid lightgray;
+   
     .flex {
         height: 100%;
         display: flex;
@@ -16,7 +17,7 @@
     }
     h2 {
         height: 100%;
-        padding: 20px;
+        padding: 25px;
         background: transparent;
         text-align: center;
         &:hover {

@@ -107,6 +107,43 @@ app.post("/add", (req, res) => {
     });
 });
 
+
+app.post("/like", (req, res) => {
+    const { people_id, advertisement_id } = req.body;
+    // Requête SQL pour insérer les données dans la base de données
+    const query = "INSERT INTO job_likes ( people_id, advertisement_id ) VALUES (?, ?);";
+
+    db.query(query, [people_id, advertisement_id], (err, result) => {
+        if (err) {
+            console.error("Erreur lors de l'insertion des données :", err);
+            res.status(500).send("Erreur serveur");
+            return;
+        }
+        console.log("Utilisateur inscrit avec succès");
+        res.send("inscription réussie !");
+    });
+});
+
+app.get("/adprofil/:id", (req,res) => {
+    console.log("ok");
+    
+    const query ="SELECT * FROM advertisements INNER JOIN job_likes ON job_likes.advertisement_id=advertisements.advertisement_id WHERE job_likes.people_id = ?;";
+    const userId = req.params.id;
+    db.query(query,[userId], (err,result)=>{
+        if (err){
+            console.error("Erreur lors de la récupération des données");
+            res.status(500).send("Erreur Serveur");
+            return;
+        }
+        // if (result.length === 0){
+        //     res.status(404).send("personne non trouvé");
+        //     return;
+        // }
+        console.log("c'est tout bon");
+        res.json(result);
+    })
+})
+
 // route pour la connexion d'un utilisateur
 
 app.post("/login", (req, res) => {
@@ -115,6 +152,38 @@ app.post("/login", (req, res) => {
 
     // Vérifier si l'utilisateur existe
     const query = "SELECT * FROM people WHERE email = ?";
+
+    db.query(query, [email], async (err, result) => {
+        if (err || result.length === 0) {
+            console.log("email incorrect")
+            res.status(400).send("Email incorrect");
+            return
+        };
+
+        const user = result[0];
+        console.log(user)
+
+        // Comparer le mot de passe avec celui stocké dans la base de données
+        const isMatch = await bcrypt.compare(password, user.password);
+     
+        if (!isMatch) {
+            console.log("je match pas")
+            res.status(400).send({msg: "Mot de passe incorrect"});
+        }
+        else {
+            console.log("je match")
+           // res.json(user);
+            res.status(200).send(user);
+        }
+    });
+});
+
+app.post("/login-company", (req, res) => {
+    const { email, password } = req.body;
+    console.log(req.body)
+
+    // Vérifier si l'utilisateur existe
+    const query = "SELECT * FROM companies WHERE email = ?";
 
     db.query(query, [email], async (err, result) => {
         if (err || result.length === 0) {
@@ -175,10 +244,10 @@ app.get("/advertisements",(req, res) => {
             return;
         }
  
-        if (result.length === 0) {
-            res.status(404).send("Utilisateur non trouvé");
-            return;
-        }
+        // if (result.length === 0) {
+        //     res.status(404).send("Utilisateur non trouvé");
+        //     return;
+        // }
  
         console.log("Données récupérées avec succès");
         res.json(result); // Retourne les données en JSON

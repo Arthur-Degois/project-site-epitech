@@ -4,23 +4,58 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    .subscribe {
-        height: 600px;
+    .subscribe2 {
+        position: absolute;
+       border-radius: 5%;
+        height: fit-content;
         width: 400px;
         background: rgba(255, 255, 255, 0.233);
-        border: 1px solid white;
+        border: 2px solid white;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: left;
+        .choice {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-direction: row;
+            label {
+                padding: 10px 20px;
+                background: white;
+                color: black;
+                border-radius: 15%;
+            }
+            input {
+                display: none;
+            }
+            #people:checked + label {
+                box-shadow:  5px 5px  7px rgb(0, 0, 255);
+            }
+ 
+            #company:checked + label {
+                box-shadow:  5px 5px  7px rgb(255, 0, 0);
+         
+               }
+ 
+               label:hover {
+                box-shadow:  5px 5px  7px;
+                transition: 0.3s;
+                transform: scale(1.2);
+               }
+            }
+        h2 {
+            font-size: 50px;
+            text-align: center;
+        }
         .flex {
+           
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            padding: 15px;
-            h2 {
-                font-size: 2rem;
-            }
+            padding: 10px;
+           
+         
             label {
                 margin: 5px;
             }
@@ -28,6 +63,10 @@
                 color: black;
                 padding: 5px;
                 width:200px;
+               
+               
+ 
+               
             }
             input:valid {
                 border: 2px solid rgb(19, 138, 19);

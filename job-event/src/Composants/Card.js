@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-const Card = ({ data, setindex, index }) => {
+const Card = ({ data, setindex, index, profil }) => {
   let donnee = data;
+  let profiluser = JSON.parse(profil)
     console.log(donnee);
     
   const [clickBL, SetClickBL] = useState(false);
@@ -18,6 +20,10 @@ const Card = ({ data, setindex, index }) => {
 
   const changeCardR = () => {
     SetClickBR(true);
+    axios.post("http://localhost:3000/like", {
+      people_id: profiluser.people_id,
+      advertisement_id: donnee.advertisement_id
+    })
     setTimeout(() => {
       SetClickBR(false);
       setindex(index++);

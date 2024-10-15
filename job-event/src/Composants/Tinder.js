@@ -3,7 +3,7 @@ import axios from "axios";
 import "../styles/tinder.css";
 import Card from "./Card";
 
-const Tinder = () => {
+const Tinder = ( { profil } )  => {
 
   const [arrayAdd, SetArrayAdd] = useState([]);
   const [index,SetIndex] = useState(0);
@@ -18,7 +18,7 @@ const Tinder = () => {
 
   return (
     <div className="main container">
-      {arrayAdd.length === 0 ? <p>pas de nouvelle annonce</p> : arrayAdd.length === index ? <p>pas de nouvelle annonce</p> : <Card data={arrayAdd[index]} setindex={SetIndex}  index={index} />}
+      {arrayAdd.length === 0 ? <p>pas de nouvelle annonce</p> : arrayAdd.length === index ? <p>pas de nouvelle annonce</p> : <Card data={arrayAdd[index]} setindex={SetIndex}  index={index} profil={profil}/>}
     </div>
   );
 };

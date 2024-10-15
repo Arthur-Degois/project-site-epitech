@@ -9,7 +9,7 @@ const Home = ({ accesToken }) => {
     return (
         <div>
             <Navigation accesToken={accesToken}/>
-            {accesToken ?<Tinder /> : <Accueuil />
+            {accesToken ?<Tinder profil={accesToken}/> : <Accueuil />
             }
         </div>
     );
