@@ -6,6 +6,7 @@ import Addcompagny from '../Composants/Addcompagny';
 import Modify from '../Composants/Modify';
 import Addadd from '../Composants/Addadd';
 import Deleteprofil from '../Composants/Deleteprofil';
+import Deletecompany from '../Composants/Deletecompany';
 
 const Admin = ({ accesToken }) => {
 
@@ -13,6 +14,7 @@ const Admin = ({ accesToken }) => {
 
     return (
         <div className='admin'>
+            <div className="BGcorner"></div>
             <Navigation accesToken={accesToken}/>
             <h1>Page Admin</h1>
             <div className='tool'>
@@ -21,7 +23,7 @@ const Admin = ({ accesToken }) => {
                 <button onClick={() => SetSwitchMenu("addadd")}>Add an Advertisement</button>
                 <button onClick={() => SetSwitchMenu("modify")}>Modifiy</button>
                 <button onClick={() => SetSwitchMenu("deleteP")}>Delete a profil</button>
-                <button>Delete a company</button>
+                <button onClick={() => SetSwitchMenu("deleteC")}>Delete a company</button>
             </div>
             <div className="monitor">
                 { (switchMenu === "addP" && <Addprofil />) 
@@ -29,6 +31,7 @@ const Admin = ({ accesToken }) => {
                 || (switchMenu === "addadd" && <Addadd />)
                 || (switchMenu === "modify" && <Modify />)
                 || (switchMenu === "deleteP" && <Deleteprofil />)
+                || (switchMenu === "deleteC" && <Deletecompany />)
                 || <p>no research found</p>}
             </div>
         </div>

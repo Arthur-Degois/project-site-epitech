@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Globe2 from './Globe2';
 
 const Accueuil = () => {
     return (
         <div className="main">
+            <Globe2 />
                 <div>
                    <h1>
                     Swipe Your Job

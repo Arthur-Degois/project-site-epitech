@@ -1,24 +1,24 @@
 import React, { useState} from 'react';
 import axios from 'axios';
 
-const Signin = ( { validform, setvalidform}) => {
+const Signin = ( { setvalidform, pathlogin, setpathlogin }) => {
 
   const [isChecked1,SetIsChecked1] = useState(true);
   const [isChecked2,SetIsChecked2] = useState(false);
-  const [pathLogin,SetPathLogin] = useState("login")
+
 
   const handleCheckBoxChange1 = (event) => {
     if (!isChecked1) {
       SetIsChecked1(event.target.checked);
       SetIsChecked2(!event.target.checked);
-      SetPathLogin("login");
+      setpathlogin("inscription");
     }
   }
   const handleCheckBoxChange2 = (event) => {
     if (!isChecked2) {
       SetIsChecked2(event.target.checked);
       SetIsChecked1(!event.target.checked);
-      SetPathLogin("login-company");
+      setpathlogin("inscription_company");
     }
   }
     
@@ -36,7 +36,7 @@ const Signin = ( { validform, setvalidform}) => {
         e.preventDefault();
         if (password === confirmPassword) {
           try {
-            axios.post("http://localhost:3000/inscription", {
+            axios.post(`http://localhost:3000/${pathlogin}`, {
               prenom: name,
               nom : lastname,
               email: email,

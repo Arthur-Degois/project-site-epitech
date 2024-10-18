@@ -1,20 +1,23 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Modifyprofil from './Modifyprofil';
+import Modifycompany from './Modifycompany';
+import Modifyad from './Modifyad';
 
 const Modify = () => {
 
-    const [array,SetArray] = useState([])
-    
-    async function fetch() {
-        const res = await axios.get(`http://localhost:3000/people-id/1`)
-        console.log(res.data);
-        SetArray(res.data)  
-    }
-
+    const [switchmodify,SetModify] = useState("modifyP")
 
     return (
         <div>
-            <button onClick={(e) => fetch()}></button>
+            <div className="selectmodify">
+                <button className='namemodify' onClick={() => SetModify("modifyP")}>Profils</button>
+                <button className='namemodify' onClick={() => SetModify("modifyC")}>Companies</button>
+                <button className='namemodify' onClick={() => SetModify("modifyA")}>Advertisements</button>
+            </div>
+            {(switchmodify === "modifyP" && <Modifyprofil />)
+            || (switchmodify === "modifyC" && <Modifycompany />)
+            || switchmodify === "modifyA" && <Modifyad />}
         </div>
     );
 };

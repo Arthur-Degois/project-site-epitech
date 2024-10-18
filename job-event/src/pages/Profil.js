@@ -10,6 +10,7 @@ const Profil = ({ accesToken }) => {
 
   return (
     <div className="profil">
+      <div className="BGcorner"></div>
       <Navigation accesToken={accesToken} />
       {
         profil.people_id ? <Profilprofil profil={profil}/> : <Profilcompany  profil={profil}/>

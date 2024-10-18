@@ -1,7 +1,31 @@
-.container {
+
+
+.container2 {
     position: relative;
     height: calc(100vh - 67px);
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .filtercard {
+        border: 1px solid white;
+        width: 300px;
+        height: fit-content;
+        margin-left: 5px;
+        select {
+            margin-bottom: 10px;
+            color: black;
+            option {
+                color: black;
+            }
+        }
+    }
+    .detailcard {
+        border: 1px solid white;
+        width: 300px;
+        height: fit-content;
+        margin-right: 5px;
+    }
+   
     h3 {
         padding: 20px;
     }
@@ -17,13 +41,18 @@
         width: 300px;
         height: 500px;
         border: 1px solid white;
-        background: rgba(255, 0, 0, 0.486);
+        background: rgba(0, 47, 255, 0.486);
         animation: moveleft 1s ease-in-out;
+        border-radius: 5%;
+        border: 2px solid white;
+        background: url(../../public/img/CardBuilding/building5.webp);
         .button {
             position: absolute;
             bottom: 20px;
             display: flex;
             flex-direction: row;
+            gap: 40px !important;
+            padding: 20px;
             .btn-hearth {
                 display: flex;
                 justify-content: center;
@@ -59,11 +88,16 @@
         border: 1px solid white;
         background: rgba(255, 0, 0, 0.486);
         animation: moveright 1s ease-in-out;
+        border-radius: 5%;
+        border: 2px solid white;
+        background: url(../../public/img/CardBuilding/building5.webp);
         .button {
             position: absolute;
             bottom: 20px;
             display: flex;
             flex-direction: row;
+            gap: 40px !important;
+            padding: 20px;
             .btn-hearth {
                 display: flex;
                 justify-content: center;
@@ -96,14 +130,24 @@
         transform: translate(-50%,-50%);
         width: 300px;
         height: 500px;
-        border: 1px solid white;
-        background: rgba(255, 0, 0, 0.486);
+        border-radius: 5%;
+        border: 2px solid white;
+        background: url(../../public/img/CardBuilding/building5.webp);
+           
+     
+       
+     
         .button {
             position: absolute;
             bottom: 20px;
             display: flex;
             flex-direction: row;
+            padding: 20px;
+            gap: 40px !important;
+ 
+           
             .btn-hearth {
+               
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -113,6 +157,7 @@
                 font-size: 3.5rem;
                 color: rgb(240, 60, 60);
                 cursor: pointer;
+               
             }
             .btn-cross {
                 display: flex;
@@ -124,11 +169,24 @@
                 font-size: 2rem;
                 color: rgb(240, 60, 60);
                 cursor: pointer;
+               
             }
         }
     }
 }
 
+
+.none {
+    position: absolute;
+    display: none;
+    .contenu {
+        display: none;
+    }
+    .button {
+        display: none;
+    }
+}
+ 
 @keyframes moveleft {
     0% {
         transform: translate(-50%, -50%);
@@ -138,7 +196,7 @@
         opacity: 0;
 }
 }
-
+ 
 @keyframes moveright {
     0% {
         transform: translate(-50%, -50%);

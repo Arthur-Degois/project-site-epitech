@@ -6,6 +6,7 @@ import "../styles/connexion.css"
 const Connexion = ({ accesToken }) => {
     return (
         <div>
+            <div className="BGcorner"></div>
             <Navigation accesToken={accesToken}/>
             <Formulaire />
         </div>

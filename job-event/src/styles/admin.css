@@ -24,6 +24,7 @@
     }
     .monitor {
         min-height: 300px;
+        height: fit-content;
         background: rgba(255, 255, 255, 0.219);
         width: 95%;
         margin: 20px auto;
@@ -77,6 +78,14 @@
                     cursor: pointer;
                 }
             }
+        }
+        .namemodify {
+            margin: 20px 10px;
+            padding: 20px;
+            border-radius: 10px;
+            border: none;
+            color: black;
+            cursor: pointer;
         }
     }
 }

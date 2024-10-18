@@ -1,38 +1,42 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const Card = ({ data, setindex, index, profil }) => {
+const Card = ({ data, profil, index, count, setcount }) => {
   let donnee = data;
-  let profiluser = JSON.parse(profil)
-    console.log(donnee);
+  const [noneDisplay,SetNoneDisplay] = useState(false);
+  
     
   const [clickBL, SetClickBL] = useState(false);
   const [clickBR, SetClickBR] = useState(false);
 
   const changeCardL = () => {
     SetClickBL(true);
+    axios.post("http://localhost:3000/unlike", {
+      people_id: profil.people_id,
+      advertisement_id: donnee.advertisement_id
+    })
     setTimeout(() => {
-      SetClickBL(false);
-      setindex(index++);
-      setindex(index++);
+      SetNoneDisplay(true);
+      setcount(count++)
+      setcount(count++)
     }, 1000);
   };
 
   const changeCardR = () => {
     SetClickBR(true);
     axios.post("http://localhost:3000/like", {
-      people_id: profiluser.people_id,
+      people_id: profil.people_id,
       advertisement_id: donnee.advertisement_id
     })
     setTimeout(() => {
-      SetClickBR(false);
-      setindex(index++);
-      setindex(index++);
+      SetNoneDisplay(true);
+      setcount(count++)
+      setcount(count++)
     }, 1000);
   };
 
   return (
-    <div className={clickBL ? "moveL" : clickBR ? "moveR" : "card"}>
+    <div className={noneDisplay ? "none" : clickBL ? "moveL" : clickBR ? "moveR" : "card"} id={index}>
       <div className="contenu">
         <h3>{donnee.title}</h3>
         <p>Company : {donnee.company_name}</p>

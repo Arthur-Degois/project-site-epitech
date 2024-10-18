@@ -1,17 +1,14 @@
 import React from 'react';
-import axios from 'axios';
 
-const Deletecardpeople = ( { people, deleteprofil } ) => {
-
-
+const Modifycardprofil = ( { people } ) => {
     return (
         <div className='profilpeople'>
             <p>{people.nom.toUpperCase()}</p>
             <p>{people.prenom}</p>
             <p>{people.email}</p>
-            <button className='delete' onClick={() => deleteprofil(people)}>Supprimer</button>
+            <button className='delete' >Modify</button>
         </div>
     );
 };
 
-export default Deletecardpeople;
+export default Modifycardprofil;

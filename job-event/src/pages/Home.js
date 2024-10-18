@@ -8,6 +8,7 @@ const Home = ({ accesToken }) => {
 
     return (
         <div>
+            <div className="BGcorner"></div>
             <Navigation accesToken={accesToken}/>
             {accesToken ?<Tinder profil={accesToken}/> : <Accueuil />
             }

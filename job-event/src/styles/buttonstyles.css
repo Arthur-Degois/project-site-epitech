@@ -1,0 +1,73 @@
+.btnAnim {
+    position: relative;
+    display: inline-block;
+    padding: 5px 40px;
+    font-size: 1.5em;
+    background: transparent;
+    border: 0px solid var(--clr);
+    font-weight: 400;
+    border-radius: 40px;    
+    cursor: pointer;
+    color: var(--clr);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: 0.5s;
+    overflow: hidden;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--clr);
+   
+ 
+}
+ 
+.btnAnim:hover{
+ 
+    background: var(--clr);
+    box-shadow: 0 0 25px var(--clr),
+    0 0 100px var(--clr),
+    0 0 150px var(--clr);
+   
+ 
+}
+ 
+.btnAnim span {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s;
+    text-shadow: 0 35px #fff;
+    transform: translateY(0px);
+   
+ 
+}
+ 
+.btnAnim:hover span.hover{
+    transform: translateY(-35px);
+}
+ 
+.btnAnim span.hover{
+    transform: translateY(-35px);
+}
+ 
+.btnAnim:active{
+   
+        transform: translateY(4px);
+        transition: 0.2s;
+ 
+    }
+ 
+ 
+@media screen and (max-width:690px){
+    .btnAnim{
+        font-size: 1rem;
+    }
+   
+}
+ 
+@media screen and (max-width:550px){
+    .btnAnim{
+       
+        font-size: 0.7rem;
+        padding: 5px;
+        margin-right: 5px;
+    }
+   
+}

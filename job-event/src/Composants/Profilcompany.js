@@ -1,6 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Cardmatch from './Cardmatch';
+import axios from 'axios';
 
 const Profilcompany = ( { profil } ) => {
+
+    const [matchArray, SetMatchArray] = useState([]);
+
+    useEffect(() => {
+      axios
+        .get(`http://localhost:3000/match-company/${profil.company_id}`)
+        .then((res) => {
+          SetMatchArray(res.data);
+          
+        });
+    }, []);
 
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
@@ -32,6 +45,8 @@ const Profilcompany = ( { profil } ) => {
         </div>
         <div className="box">
           <h3>my request</h3>
+          {matchArray.map((match, index) => <Cardmatch key={index} match={match} profil={profil}/>
+          )}
         </div>
         </div>
     );
