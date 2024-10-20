@@ -1,7 +1,7 @@
-
 .center {
     width: 100%;
-    height: calc(100vh - 67px);
+    margin: 20px 0;
+    min-height: calc(100vh - 67px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +24,8 @@
                 padding: 10px 20px;
                 background: white;
                 color: black;
-                border-radius: 15%;
+                border-radius: 10px;
+                transition: 0.3s;
             }
             input {
                 display: none;
@@ -42,6 +43,8 @@
                 box-shadow:  5px 5px  7px;
                 transition: 0.3s;
                 transform: scale(1.2);
+ 
+               
                }
             }
         }
@@ -51,6 +54,8 @@
             padding: 15px;
             h2 {
                 font-size: 2rem;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: black;
             }
             label {
                 margin: 5px;
@@ -73,5 +78,28 @@
         p {
             padding: 10px;
             color: rgb(226, 25, 25);
+        }
+    }
+ 
+    .connexion:hover {
+        background: rgb(255, 255, 255);
+        border-radius: 10px;
+        transition: 0.3s;
+        box-shadow:  5px 5px  7px;
+        transform: scale(1.2);
+       
+    }
+ 
+    .connexion{
+        transition: 0.3s
+ 
+    }
+
+
+    @media screen and (max-width: 420px) {
+        .center {
+            .subscribe {
+                width: 350px;
+            }
         }
     }

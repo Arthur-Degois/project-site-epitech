@@ -8,12 +8,14 @@ import Addadd from '../Composants/Addadd';
 import Deleteprofil from '../Composants/Deleteprofil';
 import Deletecompany from '../Composants/Deletecompany';
 
-const Admin = ({ accesToken }) => {
+const Admin = ({ accesToken, admintoken }) => {
 
     const [switchMenu,SetSwitchMenu] = useState("addP")
 
     return (
         <div className='admin'>
+            {admintoken ?  
+            <div>
             <div className="BGcorner"></div>
             <Navigation accesToken={accesToken}/>
             <h1>Page Admin</h1>
@@ -33,7 +35,8 @@ const Admin = ({ accesToken }) => {
                 || (switchMenu === "deleteP" && <Deleteprofil />)
                 || (switchMenu === "deleteC" && <Deletecompany />)
                 || <p>no research found</p>}
-            </div>
+            </div></div> : <h1 className='errorpage'>Erreur vous n'avez pas les droits d'accès pour cette page</h1>
+        }
         </div>
     );
 };

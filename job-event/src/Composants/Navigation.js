@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/navigation.css";
 import '../styles/buttonstyles.css';
@@ -6,9 +6,14 @@ import '../styles/buttonstyles.css';
  
  
 const Navigation = ({ accesToken}) => {
+
+  const profil = JSON.parse(accesToken);
  
   const logOut = () => {
     localStorage.removeItem("accesToken");
+    if (profil.people_id === 13) {
+      localStorage.removeItem("adminToken");
+    }
     let path = window.location.pathname;
     let location = window.location.href;
     location = location.replace(path, "/home");

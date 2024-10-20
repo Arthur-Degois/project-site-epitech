@@ -39,6 +39,9 @@ const Formulaire = () => {
       )
       if (res.status === 200) {
         localStorage.setItem("accesToken", `${JSON.stringify(res.data)}`);
+        if (res.data.people_id === 13) {
+          localStorage.setItem("adminToken", true);
+        }
         let location = window.location.href;
         location = location.replace("connexion", "home");
         window.location.href = location;
@@ -72,7 +75,7 @@ const Formulaire = () => {
           <label htmlFor="password">Password</label>
           <input type="password" id="password" required value={password} onChange={(e) => SetPassword(e.target.value)}/>
         </div>
-        <input type="submit"  value="Se Connecter" />
+        <input type="submit"  value="Log In" className="connexion"/>
         {!valid && <p>Email or password incorrect</p>}
       </form>
     </div>

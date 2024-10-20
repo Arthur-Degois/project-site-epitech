@@ -23,10 +23,14 @@
         display: flex;
     }
 }
+.rightbox {
+    width: 55%;
+}
  
 .info {
     text-align: center;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px; /* Ajoute un espace entre chaque carte */
     margin-bottom: 20px;
@@ -34,19 +38,17 @@
  
 .data {
     background: rgba(255, 255, 255, 0.233);
-    flex: 1 1 calc(10% - 20px); /* Largeur de chaque carte : 45% avec espace de 20px */
+    width: 95%;
     border: 1px solid #ccc;
     padding: 20px;
-    box-sizing: border-box; /* Pour inclure les bordures et les paddings dans la largeur */
     border-radius: 10px;
-    min-width: 200px; /* Largeur minimale pour les cartes */
 }
  
 .cardrequest {
     display: flex;
     width: 100%;
+    margin-bottom: 5px;
     padding: 20px;
-    gap: 30px;
     flex-wrap: wrap;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -56,25 +58,81 @@
     background: rgba(0, 128, 0, 0.377);
 }
 
-
-.halfwidth {
-    width: 50%;
-    .cardrequest {
-        display: flex;
-        width: 100%;
-        padding: 20px;
-        gap: 30px;
-        flex-wrap: wrap;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-       
-    }
-    .green {
-        background: rgba(0, 128, 0, 0.377);
+.globalmatch {
+    display: flex;
+    gap: 5px;
+    .halfwidth {
+        width: 50%;
+        .cardrequest {
+            display: flex;
+            width: 100%;
+            padding: 20px;
+            gap: 30px;
+            flex-wrap: wrap;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+           
+        }
+        .green {
+            background: rgba(0, 128, 0, 0.377);
+        }
     }
 }
  
 
 h3 {
     padding: 10px;
+}
+
+
+.box2 {
+    height: fit-content;
+    text-align: center;
+    width: 80%;
+    padding: 20px;
+    margin: 20px auto;
+    border: 2px solid lightgray;
+    background: rgba(255, 255, 255, 0.219);
+    border-radius: 10px;
+    .globalmatch {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .info {
+        grid-template-columns: 1fr; /* Une seule colonne sur les écrans plus petits */
+        width: 95%;
+        margin: 10px auto;
+        .data {
+            padding:10px 5px;
+        }
+    }
+ 
+    .cardrequest {
+        width: 95%; /* Pleine largeur sur petits écrans */
+        flex-direction: column;
+        margin: 10px auto;
+    }
+ 
+    .container {
+        width: 95%;
+        margin: 10px auto;
+        .leftbox {
+            width: 35%; /* Les box prennent toute la largeur */
+        }
+        .rightbox {
+            width: 60%;
+        }
+    }
+ 
+}
+ 
+@media screen and (max-width:550px){
+    .container {
+        flex-direction: column;
+        .box {
+            width: 80%;
+        }
+    }
 }

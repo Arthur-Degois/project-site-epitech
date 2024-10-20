@@ -1,11 +1,10 @@
 .center {
     width: 100%;
-    height: calc(100vh - 67px);
+    min-height: calc(100vh - 67px);
     display: flex;
     justify-content: center;
     align-items: center;
     .subscribe2 {
-        position: absolute;
        border-radius: 5%;
         height: fit-content;
         width: 400px;
@@ -25,6 +24,7 @@
                 background: white;
                 color: black;
                 border-radius: 15%;
+                transition: 0.3s;
             }
             input {
                 display: none;
@@ -83,6 +83,30 @@
         p {
             padding: 10px;
             color: rgb(226, 25, 25);
+        }
+    }
+}
+ 
+.Subbutton:hover {
+     
+        background: rgb(255, 255, 255);
+        border-radius: 10px;
+        transition: 0.3s;
+        box-shadow:  5px 5px  7px;
+        transform: scale(1.0);
+       
+       
+    }
+ 
+    .Subbutton{
+        transition: 0.3s
+ 
+    }
+
+@media screen and (max-width: 420px) {
+    .center {
+        .subscribe2 {
+            width: 350px;
         }
     }
 }

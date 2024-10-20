@@ -22,7 +22,7 @@ const Profilcompany = ( { profil } ) => {
     return (
         <div>
             <h2>Your Profil</h2>
-        <div className="box">
+        <div className="box2">
           <h3>personal informations</h3>
           <div className="info">
             <div className="data">
@@ -43,7 +43,7 @@ const Profilcompany = ( { profil } ) => {
             </div>
           </div>
         </div>
-        <div className="box">
+        <div className="box2">
           <h3>my request</h3>
           {matchArray.map((match, index) => <Cardmatch key={index} match={match} profil={profil}/>
           )}

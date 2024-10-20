@@ -198,7 +198,7 @@ const Signincompany = ({ setvalidform, pathlogin, setpathlogin }) => {
         />
       </div>
       {wrongPassword && <p>Password doesn't match</p>}
-      <input type="submit" value="S'inscrire" />
+      <input type="submit" value="Subscribe" className="Subbutton"/>
     </form>
   );
 };

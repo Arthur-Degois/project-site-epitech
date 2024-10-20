@@ -108,7 +108,7 @@ const Signin = ( { setvalidform, pathlogin, setpathlogin }) => {
             <input type="password" id="repassword" onChange={(e)=> SetConfirmPassword(e.target.value)}  value={confirmPassword} required />
           </div>
           {wrongPassword && <p>Password doesn't match</p>}
-          <input type="submit" value="S'inscrire"/>
+          <input type="submit" value="Subscribe" className='Subbutton'/>
         </form>
     );
 };

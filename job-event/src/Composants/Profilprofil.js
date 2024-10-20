@@ -32,7 +32,7 @@ const Profilprofil = ({ profil }) => {
     <div>
       <h3>Your Profil</h3>
       <div className="container">
-        <div className="box">
+        <div className="box leftbox">
           <h3>personal informations</h3>
           <div className="info">
             <div className="data">
@@ -53,7 +53,7 @@ const Profilprofil = ({ profil }) => {
             </div>
           </div>
         </div>
-        <div className="box">
+        <div className="box rightbox">
           <h3>my request</h3>
           <div className="globalmatch">
             <div className="halfwidth">

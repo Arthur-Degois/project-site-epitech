@@ -5,6 +5,9 @@
         margin: 0 auto;
         padding: 50px;
     }
+    input {
+        color: black;
+    }
     .tool {
         display: flex;
         justify-content: center;

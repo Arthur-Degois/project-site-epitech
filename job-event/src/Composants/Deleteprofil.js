@@ -5,6 +5,8 @@ import Deletecardpeople from './Deletecardpeople';
 const Deleteprofil = () => {
 
     const [peopleArray,SetPeopleArray] = useState([]);
+    const [namefilter, SetNameFilter] = useState("");
+    const [lastnamefilter, SetLastNameFilter] = useState("");
 
 
     const deleteprofil = (people) => {
@@ -23,11 +25,11 @@ const Deleteprofil = () => {
     return (
         <div>
             <div className='search'>
-            <input type="text" placeholder='search by name' />
-            <input type="text" placeholder='search by lastname' />
+            <input type="text" placeholder='search by name' value={namefilter} onChange={(e) => SetNameFilter(e.target.value)}/>
+            <input type="text" placeholder='search by lastname' value={lastnamefilter} onChange={(e) => SetLastNameFilter(e.target.value)}/>
             </div>
             <div className="showprofil">
-                {peopleArray.map((people, index) => <Deletecardpeople key={index} people={people} deleteprofil={deleteprofil}/>)}
+                {peopleArray.map((people, index) => <Deletecardpeople key={index} people={people} deleteprofil={deleteprofil}/>).filter((name) => name.props.people.prenom.toLowerCase().includes(namefilter.toLowerCase())).filter((lastname) => lastname.props.people.nom.toLowerCase().includes(lastnamefilter.toLowerCase()))}
             </div>
         </div>
     );
